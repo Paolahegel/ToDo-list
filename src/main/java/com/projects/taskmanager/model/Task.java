@@ -1,7 +1,7 @@
 package com.projects.taskmanager.model;
 
-import com.projects.taskmanager.model.enums.Priority;
 import com.projects.taskmanager.model.enums.TaskStatus;
+import com.projects.taskmanager.model.enums.Priority;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,8 +35,8 @@ public class Task {
     private LocalDateTime dueDate;
 
     @Enumerated(EnumType.STRING)
-    private TaskStatus status;
+    private Priority status;
 
     @Enumerated(EnumType.STRING)
-    private Priority priority;
+    private TaskStatus taskStatus;
 }
