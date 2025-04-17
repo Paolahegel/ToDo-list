@@ -1,7 +1,8 @@
 package com.projects.taskmanager.model.enums;
 
 public enum TaskStatus {
-    BAIXA,
-    MEDIA,
-    ALTA
+    PENDENTE,
+    EM_ANDAMENTO,
+    CONCLUIDA,
+    CANCELADA
 }
