@@ -1,7 +1,5 @@
-package com.projects.taskmanager.repository;
+package com.projects.todo.repository;
 
-import com.projects.taskmanager.model.Project;
-import com.projects.taskmanager.model.TaskList;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

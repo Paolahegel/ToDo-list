@@ -1,8 +1,5 @@
-package com.projects.taskmanager.repository;
+package com.projects.todo.repository;
 
-import com.projects.taskmanager.model.Task;
-import com.projects.taskmanager.model.TaskList;
-import com.projects.taskmanager.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
