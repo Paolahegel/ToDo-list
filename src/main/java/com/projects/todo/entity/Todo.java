@@ -14,6 +14,8 @@ public class Todo {
     private Long id;
     private String nome;
     private String descricao;
+
+    @Column(name = "realizado", nullable = false)
     private boolean realizado;
     private int prioridade;
 
