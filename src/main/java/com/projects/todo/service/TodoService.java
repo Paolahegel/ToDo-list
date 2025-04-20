@@ -1,6 +1,7 @@
 package com.projects.todo.service;
 
 import com.projects.todo.entity.Todo;
+import com.projects.todo.entity.enums.TodoStatus;
 import com.projects.todo.repository.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,10 @@ public class TodoService {
     public List<Todo> delete(Long id){
         todoRepository.deleteById(id);
         return list();
+    }
+
+    public List<Todo> findByStatus(TodoStatus todoStatus){
+        return todoRepository.findByTodoStatus(todoStatus);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.projects.todo.entity;
 
+import com.projects.todo.entity.enums.TodoStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -25,10 +26,14 @@ public class Todo {
     private boolean realizado;
     private int prioridade;
 
-    public Todo(String nome, String descricao, boolean realizado, int prioridade) {
+    @Enumerated(EnumType.ORDINAL)
+    private TodoStatus todoStatus;
+
+    public Todo(String nome, String descricao, boolean realizado, int prioridade, TodoStatus todoStatus) {
         this.nome = nome;
         this.realizado = realizado;
         this.descricao = descricao;
         this.prioridade = prioridade;
+        this.todoStatus = todoStatus;
     }
 }

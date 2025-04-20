@@ -1,6 +1,7 @@
 package com.projects.todo.controller;
 
 import com.projects.todo.entity.Todo;
+import com.projects.todo.entity.enums.TodoStatus;
 import com.projects.todo.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,11 @@ public class TodoController {
     @DeleteMapping("{id}")
     List<Todo> delete(@PathVariable("id") Long id){
         return todoService.delete(id);
+    }
+
+    @GetMapping("/status/{status}")
+    List<Todo> filterByStatus(@PathVariable TodoStatus todoStatus){
+        return todoService.findByStatus(todoStatus);
     }
 
 }
