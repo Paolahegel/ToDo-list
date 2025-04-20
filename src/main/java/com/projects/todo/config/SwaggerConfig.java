@@ -10,6 +10,6 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI taskManagerOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Task Manager API").version("v1.0"));
+                .info(new Info().title("To-Do API").version("v1.0"));
     }
 }

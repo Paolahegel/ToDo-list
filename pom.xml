@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.projects</groupId>
-	<artifactId>taskmanager</artifactId>
+	<artifactId>todoList</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>taskmanager</name>
 	<description>Sistema de gerenciamento de tarefas</description>

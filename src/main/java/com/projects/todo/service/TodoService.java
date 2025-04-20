@@ -7,13 +7,12 @@ import com.projects.todo.repository.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @Service
 public class TodoService {
-    private TodoRepository todoRepository;
+    private final TodoRepository todoRepository;
 
     public TodoService(TodoRepository todoRepository){
         this.todoRepository = todoRepository;
@@ -45,8 +44,8 @@ public class TodoService {
         return list();
     }
 
-    public List<Todo> findByStatus(TodoStatus todoStatus){
-        return todoRepository.findByTodoStatus(todoStatus);
+    public List<Todo> findByStatus(TodoStatus status){
+        return todoRepository.findByStatus(status);
     }
 
     public List<Todo> searchByName(String searchTerm) {

@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
-    List<Todo> findByTodoStatus(TodoStatus todoStatus);
+    List<Todo> findByStatus(TodoStatus status);
 
     @Query("SELECT t FROM Todo t WHERE LOWER(t.nome) LIKE LOWER(CONCAT('%', :searchTerm, '%'))")
     List<Todo> findByName(@Param("searchTerm") String searchTeam);

@@ -18,7 +18,7 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @Operation(summary = "create a new task")
+    @Operation(summary = "Create a new task")
     @PostMapping
     List<Todo> create(@RequestBody @Valid Todo todo){
         return todoService.create(todo);
@@ -36,23 +36,22 @@ public class TodoController {
         return todoService.update(todo);
     }
 
-    @Operation(summary = "delete a task by id")
+    @Operation(summary = "Delete a task by id")
     @DeleteMapping("{id}")
     List<Todo> delete(@PathVariable("id") Long id){
         return todoService.delete(id);
     }
 
-    @Operation(summary = "delete all tasks")
+    @Operation(summary = "Delete all tasks")
     @DeleteMapping
     List<Todo> deleteAll(){
         return todoService.deleteAll();
     }
 
-
     @Operation(summary = "Filter tasks by status")
     @GetMapping("{status}")
-    List<Todo> filterByStatus(@PathVariable("status") TodoStatus todoStatus){
-        return todoService.findByStatus(todoStatus);
+    List<Todo> filterByStatus(@PathVariable("status") TodoStatus status){
+        return todoService.findByStatus(status);
     }
 
     @Operation(summary = "Filter tasks by terms")

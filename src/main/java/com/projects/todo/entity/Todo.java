@@ -3,7 +3,6 @@ package com.projects.todo.entity;
 import com.projects.todo.entity.enums.TodoStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,26 +15,32 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "Título")
     @NotBlank
     private String nome;
 
+    @Column(name = "Descrição")
     @NotBlank
     private String descricao;
 
-    @Column(name = "realizado", nullable = false)
-    private boolean realizado;
+    @Column(name = "Prioridade")
     private int prioridade;
 
-    @Enumerated(EnumType.ORDINAL)
-    private TodoStatus todoStatus;
+    @Column(name = "Status")
+    @Enumerated(EnumType.STRING)
+    private TodoStatus status;
+
+    @Column(name = "Realizado", nullable = false)
+    private boolean realizado;
+
 
     public Todo(){}
 
-    public Todo(String nome, String descricao, boolean realizado, int prioridade, TodoStatus todoStatus) {
+    public Todo(String nome, String descricao, boolean realizado, int prioridade, TodoStatus status) {
         this.nome = nome;
         this.realizado = realizado;
         this.descricao = descricao;
         this.prioridade = prioridade;
-        this.todoStatus = todoStatus;
+        this.status = status;
     }
 }
