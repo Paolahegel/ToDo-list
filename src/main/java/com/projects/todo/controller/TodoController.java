@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/todo")
 public class TodoController {
-    private TodoService todoService;
+    private final TodoService todoService;
 
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
@@ -24,13 +24,13 @@ public class TodoController {
         return todoService.create(todo);
     }
 
-    @Operation(summary = "returns all created tasks")
+    @Operation(summary = "Find all created tasks")
     @GetMapping
     List<Todo> list(){
         return todoService.list();
     }
 
-    @Operation(summary = "update a task")
+    @Operation(summary = "Update an existing task")
     @PutMapping
     List<Todo> update(@RequestBody Todo todo){
         return todoService.update(todo);
@@ -42,10 +42,23 @@ public class TodoController {
         return todoService.delete(id);
     }
 
-    @Operation(summary = "filter tasks by status")
+    @Operation(summary = "delete all tasks")
+    @DeleteMapping
+    List<Todo> deleteAll(){
+        return todoService.deleteAll();
+    }
+
+
+    @Operation(summary = "Filter tasks by status")
     @GetMapping("{status}")
     List<Todo> filterByStatus(@PathVariable("status") TodoStatus todoStatus){
         return todoService.findByStatus(todoStatus);
+    }
+
+    @Operation(summary = "Filter tasks by terms")
+    @GetMapping("/search")
+    public List<Todo> searchTodos(@RequestParam(required = false) String term){
+        return todoService.searchByName(term);
     }
 
 }
