@@ -29,6 +29,8 @@ public class Todo {
     @Enumerated(EnumType.ORDINAL)
     private TodoStatus todoStatus;
 
+    public Todo(){}
+
     public Todo(String nome, String descricao, boolean realizado, int prioridade, TodoStatus todoStatus) {
         this.nome = nome;
         this.realizado = realizado;

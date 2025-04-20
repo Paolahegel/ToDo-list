@@ -37,8 +37,8 @@ public class TodoController {
         return todoService.delete(id);
     }
 
-    @GetMapping("/status/{status}")
-    List<Todo> filterByStatus(@PathVariable TodoStatus todoStatus){
+    @GetMapping("{status}")
+    List<Todo> filterByStatus(@PathVariable("status") TodoStatus todoStatus){
         return todoService.findByStatus(todoStatus);
     }
 
