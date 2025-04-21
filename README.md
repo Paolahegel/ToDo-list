@@ -1,4 +1,4 @@
-# 📋 To-Do List API em dese
+# 📋 To-Do List API
 
 ## 🧾 Descrição
 
@@ -6,14 +6,22 @@ Esta é uma aplicação de lista de tarefas (To-Do List) desenvolvida em Java co
 
 ---
 
+## ⚙️ Funcionalidades
+
+-  Criar uma nova tarefa
+- Atualizar uma tarefa existente
+- Filtrar tarefas por status
+- Filtrar tarefas por termo (palavra-chave)
+- Deletar tarefa por ID
+- Deletar todas as tarefas
+
 ## 🛠 Tecnologias Utilizadas
 - Linguagem: Java 
 - Framework: Spring Boot
-- Banco de dados: PostgreSQL e H2 para testes
+- Banco de dados: PostgreSQL
 - Gerenciador de Dependências: Maven
 - Anotações: Lombok
 - Documentação: SwaggerUI
-- Testes Unitários: JUnit
 - Teste Manual: Postman
 ---
 
@@ -24,17 +32,6 @@ Esta é uma aplicação de lista de tarefas (To-Do List) desenvolvida em Java co
 - Injeção de Dependências
 - Documentação automática com Swagger
 - Tratamento de respostas de erro
-
----
-
-## ⚙️ Funcionalidades
-
-- ✅ Criar uma nova tarefa
-- 🔄 Atualizar uma tarefa existente
-- 🔍 Filtrar tarefas por status
-- 🔎 Filtrar tarefas por termo (palavra-chave)
-- ❌ Deletar tarefa por ID
-- 🧹 Deletar todas as tarefas
 
 ---
 
@@ -67,10 +64,10 @@ cd ToDo-list
 http://localhost:8080/swagger-ui/index.html
 ```
 
-## Exemplo de Uso
+## Exemplos de Uso
 
 ### ✅ Criar uma nova tarefa  
-- **Rota:** `POST /api/tasks](http://localhost:8080/api/todo`  
+- **Rota:** `POST [/api/todo](http://localhost:8080/api/todo)`  
 - Requisição:  
 ```json
     {
@@ -93,6 +90,37 @@ http://localhost:8080/swagger-ui/index.html
     }
 ```
 
+### 🔍 **Filtar tarefa por termo (palavra-chave)**
+- **Rota:** `GET [api/todo](http://localhost:8080/api/todo/search?term=java)`  
+- Requisição:  
+```
+    java
+```
+- Resposta em caso de NotFound:
+```
+No tasks found with term: java
+```
+---
+
+## 💡 Melhorias Futuras
+
+- Ampliar o tratamento de exceções
+- Implementar Testes Unitários com JUnit 
+
+---
+
+## 🤝 Contribuindo  
+
+Contribuições são bem-vindas! Siga os passos abaixo:  
+1. Faça um **fork** deste repositório  
+2. Crie uma nova **branch** (`git checkout -b minha-feature`)  
+3. Faça as alterações e **commite** (`git commit -m 'Minha nova feature'`)  
+4. Faça o **push** para a sua branch (`git push origin minha-feature`)  
+5. Abra um **Pull Request** 🚀  
+
+---
+
+📌 **Desenvolvido por [@paolahegel](https://github.com/paolahegel)**  
 
 
 
